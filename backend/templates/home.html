@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome to Our Blog{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <div class="hero-section mb-4">
+        <h2>Welcome to Our Full-Stack Blog</h2>
+        <p class="lead">Built with Django & Next.js</p>
+    </div>
+    
+    <!-- XSS Protection Demo -->
+    <div class="safe-content mb-4">
+        <h3><i class="bi bi-shield-check"></i> XSS Protection Demo</h3>
+        <p><strong>Attempted malicious input:</strong> <code>{{ user_input }}</code></p>
+        <p class="mb-0">
+            <em>Notice how Django automatically escapes the script tags, rendering them harmless.</em>
+        </p>
+        <small class="text-muted">This is OWASP A03 (Injection) protection in action!</small>
+    </div>
+    
+    <!-- Features Section -->
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <i class="bi bi-check2-circle text-success"></i> Completed Features
+                    </h3>
+                    <ul class="features-list">
+                        <li><i class="bi bi-check-lg text-success"></i> Django MVT architecture</li>
+                        <li><i class="bi bi-check-lg text-success"></i> Template inheritance (DRY)</li>
+                        <li><i class="bi bi-check-lg text-success"></i> Static & media files</li>
+                        <li><i class="bi bi-check-lg text-success"></i> Bootstrap 5.3 styling</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <i class="bi bi-hourglass-split text-warning"></i> Coming Soon
+                    </h3>
+                    <ul class="features-list">
+                        <li><i class="bi bi-hourglass text-warning"></i> Blog models and ORM</li>
+                        <li><i class="bi bi-hourglass text-warning"></i> User authentication</li>
+                        <li><i class="bi bi-hourglass text-warning"></i> REST API with DRF</li>
+                        <li><i class="bi bi-hourglass text-warning"></i> Next.js frontend</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- CTA Button -->
+    <div class="text-center mt-4">
+        <a href="{% url 'blog:post_list' %}" class="cta-button">
+            <i class="bi bi-arrow-right-circle"></i> View Blog Posts
+        </a>
+    </div>
+{% endblock %}
